@@ -19,9 +19,7 @@ If you are resuming an existing feature, switch to that feature branch instead o
 Run these checks before committing:
 
 ```bash
-python -m pytest
-ruff check .
-python -m build
+bash scripts/pre_pr.sh
 git diff --check
 ```
 
@@ -36,6 +34,8 @@ git commit -m "feat: describe the change"
 git push -u origin feat/<short-description>
 gh pr create --base dev --head feat/<short-description>
 ```
+
+Run `bash scripts/pre_pr.sh` before `gh pr create`. It runs the security review, dependency audit, Python checks, package build, and Playwright QA smoke test.
 
 The normal promotion path is:
 
