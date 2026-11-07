@@ -7,3 +7,5 @@
 - Defined the synthetic invoice schema: invoice metadata, ISO dates, three-letter currency, line items, subtotal, tax, and total.
 - Added four synthetic JSON fixtures and deterministic extraction/validation tests.
 - Verification: source changes are syntactically checked without bytecode writes; the environment does not currently provide pytest or ruff.
+- Added matrix CI for Python 3.11/3.12, package build verification, a tag-based delivery artifact workflow, and a pull-request template.
+- Documented GitHub authentication and branch protection requirements in `docs/CI_CD.md`.
