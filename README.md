@@ -37,6 +37,8 @@ pytest
 
 Use `main` for stable code, `dev` for integration, and `feat/*` for changes. Every pull request into `dev` or `main` runs the CI workflow. Pushing a version tag such as `v0.1.0` runs the delivery workflow and stores a built package in GitHub Actions artifacts.
 
+For the complete start-to-finish coding routine, see [Developer workflow](docs/DEVELOPER_WORKFLOW.md).
+
 ```bash
 git switch -c feat/my-change dev
 git push -u origin feat/my-change
