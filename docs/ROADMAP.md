@@ -6,17 +6,18 @@ Build a reproducible document-intake workflow that extracts structured fields, v
 
 ## Milestones
 
-- [ ] M0 — Repository and environment setup
-- [ ] M1 — Minimal working workflow
-- [ ] M2 — Validation and error handling
-- [ ] M3 — Human approval and audit log
-- [ ] M4 — Tests, Docker, and CI
+- [x] M0 — Repository and environment setup
+- [x] M1 — Deterministic extraction and validation
+- [x] M2 — Human approval and transition tests
+- [x] M3 — SQLite persistence for approved invoices
+- [x] M4a — Tests, security gates, Playwright QA, and CI
+- [ ] M4b — Append-only audit log and end-to-end workflow
 - [ ] M5 — Evaluation and failure analysis
 - [ ] M6 — Public demo and case study
 
 ## Current milestone
 
-M0 — Repository and environment setup.
+M4b — Append-only audit log and end-to-end workflow.
 
 ## Definition of done
 

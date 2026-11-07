@@ -6,11 +6,11 @@ Create the first portfolio project from the Applied AI Engineering Portfolio Pla
 
 ## Current milestone
 
-M3 — SQLite persistence for approved invoices.
+M4 — Append-only audit log and end-to-end workflow.
 
 ## Status
 
-The repository contains a deterministic invoice workflow with a human-review boundary and SQLite persistence. Synthetic JSON fixtures are extracted into typed invoice records, checked with rule-based validation, routed through explicit approval or rejection states, and approved invoices can be persisted locally. Audit logging remains the next milestone.
+The repository contains a deterministic invoice workflow with a human-review boundary and SQLite persistence. Synthetic JSON fixtures are extracted into typed invoice records, checked with rule-based validation, routed through explicit approval or rejection states, and approved invoices can be persisted locally. The next milestone is append-only audit logging and an end-to-end local workflow.
 
 ## Recent changes
 
@@ -20,6 +20,7 @@ The repository contains a deterministic invoice workflow with a human-review bou
 - Added a small synthetic invoice schema, four fixtures, deterministic extraction, and validation tests.
 - Added explicit invoice approval states, reviewer decisions, rejection reasons, and transition tests.
 - Added an approved-only SQLite repository with persistence and retrieval tests.
+- Merged PRs #1–#5 covering the baseline, workflow documentation, approval, security/QA gates, and SQLite persistence.
 
 ## Important decisions
 

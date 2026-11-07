@@ -12,7 +12,9 @@ The first version intentionally uses deterministic sample data and rules. Model-
 
 ## Status
 
-The deterministic extraction and validation baseline is implemented. Approval, SQLite persistence, and audit logging are the next workflow milestones.
+The deterministic extraction, validation, human approval, and approved-only SQLite persistence milestones are implemented. The next milestone is an append-only audit log and end-to-end local workflow.
+
+See [Project plan and agent handoff](docs/PROJECT_PLAN.md) for completed work, remaining milestones, and resume instructions.
 
 ## Repository layout
 
