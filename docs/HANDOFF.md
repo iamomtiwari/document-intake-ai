@@ -2,17 +2,19 @@
 
 ## Resume objective
 
-Implement the first end-to-end deterministic document-intake workflow.
+Add approval, SQLite persistence, and audit logging to the deterministic invoice workflow.
 
 ## Completed
 
 - Initialized `/home/imomtiwari/document-intake-ai` as a Git repository.
 - Added the repository standard, packaging metadata, license, and initial smoke test.
+- Defined a synthetic invoice schema and added valid, missing-field, malformed-value, and conflicting-total fixtures.
+- Implemented typed extraction and rule-based validation in `src/document_intake/invoice.py`.
+- Added tests covering the four baseline cases.
 
 ## Not completed
 
-- Document schema and sample fixture
-- Extraction, validation, approval, persistence, API, and UI
+- Approval, persistence, audit log, API, and UI
 
 ## Files to inspect first
 
@@ -36,7 +38,7 @@ This is a scaffold only.
 
 ## First next action
 
-Define the synthetic invoice fields and implement the deterministic extraction/validation module with tests.
+Run the test suite in an environment with the declared development dependencies, then implement approval state transitions.
 
 ## Do not forget
 
