@@ -1,0 +1,10 @@
+{
+  "name": "document-intake-ai-qa",
+  "private": true,
+  "scripts": {
+    "qa": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0"
+  }
+}
