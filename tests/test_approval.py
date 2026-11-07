@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
@@ -17,7 +17,7 @@ def load_invoice(name: str = "invoice-valid.json"):
 
 def test_valid_invoice_can_be_approved_by_a_reviewer() -> None:
     approval = InvoiceApproval(load_invoice(), validate_invoice(load_invoice()))
-    decided_at = datetime(2026, 1, 20, tzinfo=timezone.utc)
+    decided_at = datetime(2026, 1, 20, tzinfo=UTC)
 
     approval.mark_validated()
     approval.submit_for_review()

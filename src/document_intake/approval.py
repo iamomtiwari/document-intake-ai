@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import StrEnum
 
 from document_intake.invoice import Invoice, ValidationResult
@@ -54,7 +54,7 @@ class InvoiceApproval:
         self.decision = ApprovalDecision(
             status=ApprovalStatus.APPROVED,
             reviewer=reviewer.strip(),
-            decided_at=decided_at or datetime.now(timezone.utc),
+            decided_at=decided_at or datetime.now(UTC),
         )
         self.status = ApprovalStatus.APPROVED
         return self.decision
@@ -72,7 +72,7 @@ class InvoiceApproval:
         self.decision = ApprovalDecision(
             status=ApprovalStatus.REJECTED,
             reviewer=reviewer.strip(),
-            decided_at=decided_at or datetime.now(timezone.utc),
+            decided_at=decided_at or datetime.now(UTC),
             reason=reason.strip(),
         )
         self.status = ApprovalStatus.REJECTED
