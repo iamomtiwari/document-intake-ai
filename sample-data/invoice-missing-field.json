@@ -1,0 +1,10 @@
+{
+  "invoice_id": "INV-1002",
+  "vendor_name": "Synthetic Office Supplies Ltd",
+  "invoice_date": "2026-01-15",
+  "due_date": "2026-02-14",
+  "currency": "USD",
+  "line_items": [{"description": "Notebook", "quantity": 1, "unit_price": "4.00"}],
+  "subtotal": "4.00",
+  "total": "4.40"
+}
