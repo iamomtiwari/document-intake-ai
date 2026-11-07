@@ -6,6 +6,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+
 SECRET_PATTERNS = (
     re.compile(r"AKIA[0-9A-Z]{16}"),
     re.compile(r"(?:ghp|github_pat)_[A-Za-z0-9_]{20,}"),
