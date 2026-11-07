@@ -4,7 +4,7 @@
   "invoice_date": "15-01-2026",
   "due_date": "2026-02-14",
   "currency": "USD",
-  "line_items": [{"description": "Notebook", "quantity": "one", "unit_price": "4.00"}],
+  "line_items": [{"description": "Notebook", "quantity": 1, "unit_price": "4.00"}],
   "subtotal": "4.00",
   "tax": "0.40",
   "total": "4.40"
