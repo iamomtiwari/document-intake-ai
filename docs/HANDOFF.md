@@ -2,7 +2,7 @@
 
 ## Resume objective
 
-Add SQLite persistence and audit logging to the deterministic invoice workflow.
+Add audit logging and an end-to-end local workflow to the deterministic invoice workflow.
 
 ## Completed
 
@@ -13,10 +13,12 @@ Add SQLite persistence and audit logging to the deterministic invoice workflow.
 - Added tests covering the four baseline cases.
 - Added `InvoiceApproval` with `EXTRACTED`, `VALIDATED`, `PENDING_REVIEW`, `APPROVED`, and `REJECTED` states.
 - Added approval tests for successful approval, rejection, invalid invoices, invalid transitions, and required reviewer/reason fields.
+- Added `InvoiceRepository` for approved-only SQLite persistence and retrieval.
+- Added persistence tests for approved, unreviewed, rejected, and duplicate invoices.
 
 ## Not completed
 
-- Persistence, audit log, API, and UI
+- Audit log, API, and UI
 
 ## Files to inspect first
 
@@ -40,7 +42,7 @@ This is a scaffold only.
 
 ## First next action
 
-Run the test suite in an environment with the declared development dependencies, then implement SQLite persistence for approved invoices.
+Run the test suite in an environment with the declared development dependencies, then implement append-only audit events.
 
 ## Do not forget
 

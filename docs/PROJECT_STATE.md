@@ -6,11 +6,11 @@ Create the first portfolio project from the Applied AI Engineering Portfolio Pla
 
 ## Current milestone
 
-M2 — Human approval state transitions.
+M3 — SQLite persistence for approved invoices.
 
 ## Status
 
-The repository contains a deterministic invoice workflow with a human-review boundary. Synthetic JSON fixtures are extracted into typed invoice records, checked with rule-based validation, and routed through explicit approval or rejection states. SQLite persistence and audit logging remain future milestones.
+The repository contains a deterministic invoice workflow with a human-review boundary and SQLite persistence. Synthetic JSON fixtures are extracted into typed invoice records, checked with rule-based validation, routed through explicit approval or rejection states, and approved invoices can be persisted locally. Audit logging remains the next milestone.
 
 ## Recent changes
 
@@ -19,6 +19,7 @@ The repository contains a deterministic invoice workflow with a human-review bou
 - Added README, roadmap, and project-state documentation.
 - Added a small synthetic invoice schema, four fixtures, deterministic extraction, and validation tests.
 - Added explicit invoice approval states, reviewer decisions, rejection reasons, and transition tests.
+- Added an approved-only SQLite repository with persistence and retrieval tests.
 
 ## Important decisions
 
@@ -27,6 +28,7 @@ The repository contains a deterministic invoice workflow with a human-review bou
 - Keep extraction free of model calls: JSON field normalization and Decimal/date parsing are deterministic and reproducible.
 - Treat line-item arithmetic and subtotal-plus-tax arithmetic as validation rules; validation returns all discovered errors.
 - Do not allow an invalid invoice to enter review or an approved/rejected invoice to receive another decision.
+- Keep SQLite writes behind `InvoiceRepository.save_approved`; unreviewed and rejected invoices must not be stored.
 
 ## Verification
 
@@ -42,9 +44,10 @@ The repository contains a deterministic invoice workflow with a human-review bou
 
 - The current fixture format is JSON representing a synthetic document; a future milestone can add a source-text adapter without changing validation rules.
 - The current approval boundary is a Python domain object; a CLI or web interface can call it later.
+- Line items are stored as deterministic JSON inside the local SQLite record for this first persistence milestone.
 
 ## Next three actions
 
-1. Persist approved invoices and validation results in SQLite.
-2. Add append-only audit events for extraction, validation, and decisions.
-3. Add end-to-end workflow tests and a small local CLI.
+1. Add append-only audit events for extraction, validation, persistence, and decisions.
+2. Add end-to-end workflow tests and a small local CLI.
+3. Evaluate database migrations and a review interface after the local workflow is stable.
