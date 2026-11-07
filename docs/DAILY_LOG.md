@@ -11,3 +11,5 @@
 - Documented GitHub authentication and branch protection requirements in `docs/CI_CD.md`.
 - Implemented the human approval state machine with deterministic transitions and reviewer decisions.
 - Added tests for approval, rejection, invalid invoices, duplicate decisions, and required decision fields.
+- Implemented approved-only SQLite persistence with deterministic line-item serialization and retrieval.
+- Added persistence tests covering approved, unreviewed, rejected, and duplicate invoices.
