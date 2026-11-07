@@ -2,7 +2,7 @@
 
 ## Resume objective
 
-Add audit logging and an end-to-end local workflow to the deterministic invoice workflow.
+Implement the append-only audit log and end-to-end local workflow. Use `docs/PROJECT_PLAN.md` as the source of truth for the broader plan.
 
 ## Completed
 
@@ -15,6 +15,8 @@ Add audit logging and an end-to-end local workflow to the deterministic invoice 
 - Added approval tests for successful approval, rejection, invalid invoices, invalid transitions, and required reviewer/reason fields.
 - Added `InvoiceRepository` for approved-only SQLite persistence and retrieval.
 - Added persistence tests for approved, unreviewed, rejected, and duplicate invoices.
+- Added CI security and Playwright QA gates, a local `bash scripts/pre_pr.sh` gate, and the security-review skill guide.
+- Merged PRs #1–#5 into the project branches.
 
 ## Not completed
 
@@ -23,6 +25,7 @@ Add audit logging and an end-to-end local workflow to the deterministic invoice 
 ## Files to inspect first
 
 - `README.md`
+- `docs/PROJECT_PLAN.md`
 - `docs/ROADMAP.md`
 - `docs/PROJECT_STATE.md`
 
@@ -34,15 +37,15 @@ git init -b main /home/imomtiwari/document-intake-ai
 
 ## Verification results
 
-The repository was created successfully. Python compilation and whitespace checks passed. The test suite could not run because `pytest` is not installed in the environment.
+GitHub CI has passed Python 3.11/3.12 lint, tests, package build, security review, dependency audit, and Playwright QA. The local mounted environment may not have pytest, Ruff, pip-audit, or npm dependencies installed; run the declared setup commands before relying on local full-gate results.
 
 ## Known failures or limitations
 
-This is a scaffold only.
+The approval interface is still a Python domain boundary, not a user-facing UI. The audit log and end-to-end CLI are not implemented yet.
 
 ## First next action
 
-Run the test suite in an environment with the declared development dependencies, then implement append-only audit events.
+Create `feat/audit-log` from the updated `dev`, implement the append-only event table and event recording, add end-to-end tests, then run `bash scripts/pre_pr.sh` before opening the PR.
 
 ## Do not forget
 

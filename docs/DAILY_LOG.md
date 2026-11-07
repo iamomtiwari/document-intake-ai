@@ -13,3 +13,4 @@
 - Added tests for approval, rejection, invalid invoices, duplicate decisions, and required decision fields.
 - Implemented approved-only SQLite persistence with deterministic line-item serialization and retrieval.
 - Added persistence tests covering approved, unreviewed, rejected, and duplicate invoices.
+- PR #5 was merged into `dev`; project state, roadmap, handoff, and agent-facing plan were updated.
