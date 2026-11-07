@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal, InvalidOperation
-from typing import Any, Mapping
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -81,7 +82,7 @@ def extract_invoice(document: Mapping[str, Any]) -> Invoice:
     items: list[InvoiceLine] = []
     for index, raw_item in enumerate(raw_items):
         if not isinstance(raw_item, Mapping):
-            raise ValueError(f"line_items[{index}] must be an object")
+            raise TypeError(f"line_items[{index}] must be an object")
         for field in ("description", "quantity", "unit_price"):
             if field not in raw_item:
                 raise ValueError(f"line_items[{index}] is missing {field}")

@@ -5,7 +5,6 @@ import pytest
 
 from document_intake.invoice import extract_invoice, validate_invoice
 
-
 DATA = Path(__file__).parents[1] / "sample-data"
 
 

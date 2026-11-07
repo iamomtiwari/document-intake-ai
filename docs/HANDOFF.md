@@ -2,7 +2,7 @@
 
 ## Resume objective
 
-Add approval, SQLite persistence, and audit logging to the deterministic invoice workflow.
+Add SQLite persistence and audit logging to the deterministic invoice workflow.
 
 ## Completed
 
@@ -11,10 +11,12 @@ Add approval, SQLite persistence, and audit logging to the deterministic invoice
 - Defined a synthetic invoice schema and added valid, missing-field, malformed-value, and conflicting-total fixtures.
 - Implemented typed extraction and rule-based validation in `src/document_intake/invoice.py`.
 - Added tests covering the four baseline cases.
+- Added `InvoiceApproval` with `EXTRACTED`, `VALIDATED`, `PENDING_REVIEW`, `APPROVED`, and `REJECTED` states.
+- Added approval tests for successful approval, rejection, invalid invoices, invalid transitions, and required reviewer/reason fields.
 
 ## Not completed
 
-- Approval, persistence, audit log, API, and UI
+- Persistence, audit log, API, and UI
 
 ## Files to inspect first
 
@@ -38,7 +40,7 @@ This is a scaffold only.
 
 ## First next action
 
-Run the test suite in an environment with the declared development dependencies, then implement approval state transitions.
+Run the test suite in an environment with the declared development dependencies, then implement SQLite persistence for approved invoices.
 
 ## Do not forget
 

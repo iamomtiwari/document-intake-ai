@@ -9,3 +9,5 @@
 - Verification: source changes are syntactically checked without bytecode writes; the environment does not currently provide pytest or ruff.
 - Added matrix CI for Python 3.11/3.12, package build verification, a tag-based delivery artifact workflow, and a pull-request template.
 - Documented GitHub authentication and branch protection requirements in `docs/CI_CD.md`.
+- Implemented the human approval state machine with deterministic transitions and reviewer decisions.
+- Added tests for approval, rejection, invalid invoices, duplicate decisions, and required decision fields.
