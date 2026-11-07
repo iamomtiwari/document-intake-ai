@@ -12,7 +12,7 @@ The first version intentionally uses deterministic sample data and rules. Model-
 
 ## Status
 
-Repository scaffolded. The minimal extraction, validation, approval, and persistence workflow is the next implementation step.
+The deterministic extraction and validation baseline is implemented. Approval, SQLite persistence, and audit logging are the next workflow milestones.
 
 ## Repository layout
 
@@ -31,6 +31,20 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -e '.[dev]'
 pytest
+```
+
+## Git workflow and delivery
+
+Use `main` for stable code, `dev` for integration, and `feat/*` for changes. Every pull request into `dev` or `main` runs the CI workflow. Pushing a version tag such as `v0.1.0` runs the delivery workflow and stores a built package in GitHub Actions artifacts.
+
+```bash
+git switch -c feat/my-change dev
+git push -u origin feat/my-change
+# Open a pull request from feat/my-change into dev
+git switch dev
+git pull --ff-only origin dev
+git tag v0.1.0
+git push origin v0.1.0
 ```
 
 ## Data and safety
