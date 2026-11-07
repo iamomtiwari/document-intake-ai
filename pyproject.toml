@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "document-intake-ai"
+version = "0.1.0"
+description = "A validated, human-approved document intake workflow."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9.0",
+  "ruff>=0.8,<1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/document_intake"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
